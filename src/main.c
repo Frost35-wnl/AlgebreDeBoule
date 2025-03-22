@@ -24,12 +24,18 @@ int main()
             transcodage();
             break;
         }
-        default:
+        case '2':
+        case '3':
+        {
+            system("clear");
+            printf("\nEn stade de développement");
+            fflush(stdout);
+            system("sleep 5");
+            
+            break;
+        }
+        case 'q':
             return 0;
-            // case 2: // appeler fonction dans entierRelatif
-            // case 3: // appeler fonction dans nombreReel
-            // case 'q':
-            //     return 0;
         }
 
     } while (1);

@@ -11,13 +11,19 @@ int transcodage()
     short userBaseFrom = 0, userBaseTo = 0;
     long userNumberToBase10 = 0;
 
+    system("clear");
+    printTranscodageGuide();
+    printf("\nTaper 'Entrer' pour continuer : ");
+    while (getchar() != '\n');
+
     do
     {
         userInput = malloc(MAX_INPUT_LENGTH * sizeof(char));
         printTranscodageMenu();
         getUserInput(userInput);
 
-        if (userNavigation(userInput) == 1) break;
+        if (userNavigation(userInput) == 1)
+            break;
         if (userNavigation(userInput) == 2)
         {
             free(userInput);
@@ -93,7 +99,7 @@ void printTranscodageMenu(void)
     printf("|                  Transcodage                  |\n");
     printf("|                                               |\n");
     printf("|_______________________________________________|\n");
-    printf("\n\nVous pouvez transformer un nombre d'une base vers une autre (bases 2, 4, 8, 10, 16)\n");
+    printf("\n\nVous pouvez transformer un nombre d'une base vers une autre (bases 02, 04, 08, 10, 16)\n");
     printf("\nExemple : (nombre)-(base de départ)-(base du résultat) -- exemple : 12345678-10-16\nTaper 'q' pour quitter\nTaper '..' pour revenir au menu principal");
     printf("\n\n\tVotre choix : ");
 }
